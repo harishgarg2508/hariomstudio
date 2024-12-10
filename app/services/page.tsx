@@ -9,7 +9,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import DroneSection from './drone-section'
 import ServiceCard from './service-card'
-
+import Navbar from '../components/Navbar'
+import Footer from '../components/footer'
 const packages = [
   {
     name: "Stardust",
@@ -93,6 +94,8 @@ export default function ServicesPage() {
   const [selectedPackage, setSelectedPackage] = useState(packages[1].name)
 
   return (
+    <div>
+      <Navbar />
     <div className="container mx-auto px-4 py-16">
       <AnimatedSection>
         <header className="text-center mb-16">
@@ -154,6 +157,8 @@ export default function ServicesPage() {
         <DroneSection />
       </AnimatedSection>
 
+    
+    </div>
     
     </div>
   )

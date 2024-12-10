@@ -59,7 +59,10 @@
 }
 
 .gradient-background {
-  background: radial-gradient(circle at top left, hsl(270 50% 15%), transparent),
-              radial-gradient(circle at top right, hsl(252 100% 15%), transparent),
-              linear-gradient(to bottom, hsl(270 50% 5%), hsl(270 50% 2%));
+  background: bg-gradient-to-r from-gray-900 to-black;
 }
+
+/* 
+radial-gradient(circle at top left, hsl(270 50% 15%), transparent),
+              radial-gradient(circle at top right, hsl(252 100% 15%), transparent),
+              linear-gradient(to bottom, hsl(270 50% 5%), hsl(270 50% 2%)) */

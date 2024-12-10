@@ -18,7 +18,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      whileHover={{ scale: 2.05}}
+      whileHover={{ scale: 1.5}}
       whileTap={{ scale: 0.95 }}
     >
       <Card className="h-full flex flex-col">

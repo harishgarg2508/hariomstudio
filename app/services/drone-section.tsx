@@ -59,7 +59,7 @@ export default function DroneSection() {
         className="absolute inset-0 flex items-center justify-center z-0"
         style={{ y: smoothY, rotate: smoothRotate }}
       >
-        <Drone className="w-96 h-96 text-white opacity-20" />
+        <Drone className="w-72 h-72 text-white opacity-20" />
       </motion.div>
 
       {/* Text Content */}

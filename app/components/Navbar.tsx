@@ -3,46 +3,15 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  Camera, 
-  Image as ImageIcon, 
-  Users, 
-  MessageCircle, 
-  Feather, 
-  BookOpen 
-} from 'lucide-react'
+import { Home, Camera, ImageIcon, Users, MessageCircle, Feather, BookOpen, Menu, X } from 'lucide-react'
 
 const navItems = [
-  { 
-    href: 'Gallary', 
-    label: 'Gallery', 
-    icon: ImageIcon,
-    // description: 'Explore Captured Moments'
-  },
-  { 
-    href: '/services', 
-    label: 'Services', 
-    icon: Camera,
-    // description: 'Professional Photography'
-  },
-  { 
-    href: '/about', 
-    label: 'About',
-    icon: Users,
-    // description: 'Our Story & Passion'
-  },
-  { 
-    href: '/blog', 
-    label: 'Blog', 
-    icon: BookOpen,
-    // description: 'Insights & Inspiration'
-  },
-  { 
-    href: '/contact', 
-    label: 'Contact', 
-    icon: MessageCircle,
-    // description: 'Get In Touch'
-  }
+  { href: '/', label: 'Home', icon: Home },
+  { href: '/gallery', label: 'Gallery', icon: ImageIcon },
+  { href: '/services', label: 'Services', icon: Camera },
+  { href: '/about', label: 'About', icon: Users },
+  { href: '/blog', label: 'Blog', icon: BookOpen },
+  { href: '/contact', label: 'Contact', icon: MessageCircle }
 ]
 
 const AnimatedCameraIcon = () => {
@@ -60,7 +29,7 @@ const AnimatedCameraIcon = () => {
   return (
     <motion.div
       animate={{ 
-        rotate: [0, 45 , 0],
+        scale: [1, 1.1, 1],
         transition: { 
           duration: 10, 
           repeat: Infinity, 
@@ -78,12 +47,10 @@ const AnimatedCameraIcon = () => {
       />
       {isFlashing && (
         <motion.div
-          
-          initial={{ opacity: 0.5, scale: 5.5 }}
+          initial={{ opacity: 0.5, scale: 5 }}
           animate={{ 
-            
             opacity: 0, 
-            scale: 5,
+            scale: 2,
             transition: { duration: 0.1 }
           }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-yellow-300 rounded-full blur-2xl"
@@ -95,6 +62,9 @@ const AnimatedCameraIcon = () => {
 
 export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
   return (
     <motion.header
@@ -116,14 +86,18 @@ export default function Navbar() {
             transition={{ delay: 0.2 }}
             className="flex items-center space-x-2"
           >
-            <Feather className="text-white/80 h-6 w-6" />
-            <span className="text-2xl font-bold text-white/90 tracking-wider">
-              HariOm Studio
-            </span>
+            <Link href="/">
+              <div className="flex items-center space-x-2 cursor-pointer">
+                <Feather className="text-white/80 h-6 w-6" />
+                <span className="text-2xl font-bold text-white/90 tracking-wider">
+                  HariOm Studio
+                </span>
+              </div>
+            </Link>
           </motion.div>
 
-          {/* Navigation Menu */}
-          <nav className="flex items-center space-x-10 bg-black/40 backdrop-blur-xl rounded-3xl px-20 py-3 border  border-white shadow-lg">
+          {/* Desktop Navigation Menu */}
+          <nav className="hidden md:flex items-center space-x-10  bg-black/40 backdrop-blur-xl rounded-3xl px-20 py-3 border border-white shadow-lg">
             {navItems.map((item) => {
               const Icon = item.icon
               return (
@@ -132,7 +106,7 @@ export default function Navbar() {
                   onHoverStart={() => setHoveredItem(item.href)}
                   onHoverEnd={() => setHoveredItem(null)}
                   whileHover={{ scale: 1.05 }}
-                  className="flex flex-col items-center justify-center space-y-1 relative group  cursor-pointer"
+                  className="flex flex-col items-center justify-center space-y-1 relative group cursor-pointer"
                 >
                   <Link 
                     href={item.href}
@@ -149,34 +123,72 @@ export default function Navbar() {
                       {item.label}
                     </span>
                   </Link>
-                  
-                  {hoveredItem === item.href && (
-                    <motion.div
-                      layoutId="hover-description"
-                      className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-white/20 px-3 py-1 rounded-full text-xs text-white/80"
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                    >
-                      {/* {item.description} */}
-                    </motion.div>
-                  )}
                 </motion.div>
               )
             })}
           </nav>
 
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden">
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={toggleMenu}
+              className="text-white p-2"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
+          </div>
+
           {/* Animated Camera Icon */}
-          <AnimatedCameraIcon />
+          <div className="hidden md:block">
+            <AnimatedCameraIcon />
+          </div>
         </div>
       </div>
 
-      {/* Subtle Background Glow */}
-      {/* <div 
-        className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-900/50 via-purple-900/50 to-indigo-900/50 opacity-70 blur-3xl"
+      {/* Mobile Navigation Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.nav
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden absolute top-full left-0 right-0 bg-black/90 backdrop-blur-xl py-4 px-2 rounded-b-2xl border-t border-white/20"
+          >
+            {navItems.map((item) => {
+              const Icon = item.icon
+              return (
+                <motion.div
+                  key={item.href}
+                  whileTap={{ scale: 0.95 }}
+                  className="mb-2 last:mb-0"
+                >
+                  <Link 
+                    href={item.href}
+                    className="flex items-center space-x-4 text-white/80 hover:text-white transition-all duration-300 p-2 rounded-lg hover:bg-white/10"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="text-sm font-medium">{item.label}</span>
+                  </Link>
+                </motion.div>
+              )
+            })}
+          </motion.nav>
+        )}
+      </AnimatePresence>
+
+      {/* Subtle Background Glow */} 
+      <div 
+        className="absolute inset-0 -z-10 bg-black "
         style={{
-          clipPath: 'polygon(0 0, 100% 0, 100% 80%, 0 100%)'
+          clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
         }}
-      /> */}
+      />
     </motion.header>
   )
 }
+
+
+

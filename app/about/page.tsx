@@ -1,10 +1,22 @@
-export default function About() {
-    return (
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-4">About Us</h1>
-        <p>This page will contain information about the photographer and their journey.</p>
-      </div>
-    )
-  }
-  
-  
+"use client";
+
+import { motion } from "framer-motion";
+import { Camera, Video, Award, Image as ImageIcon } from "lucide-react";
+import { Equipment } from "./equipment";
+import { ExperienceTimeline } from "./experience";
+import { ProfileHero } from "./profile";
+import { Stats } from "./stats";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
+export default function AboutPage() {
+  return (
+    <main className="min-h-screen bg-background">
+      <Navbar />
+      <ProfileHero />
+      <Stats />
+      <Equipment />
+      <ExperienceTimeline />
+      <Footer />
+    </main>
+  );
+}
