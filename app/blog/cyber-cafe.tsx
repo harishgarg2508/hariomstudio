@@ -9,25 +9,25 @@ const services = [
     icon: Printer,
     title: "Document Printing",
     description: "Black & white and color printing services for all document types",
-    price: "Starting at $0.10/page",
+    price: "Starting at ₹0.10/page",
   },
   {
     icon: FileText,
     title: "Scanning Services",
     description: "High-quality document scanning with various format options",
-    price: "Starting at $0.25/page",
+    price: "Starting at ₹0.25/page",
   },
   {
     icon: ImageIcon,
     title: "Photo Printing",
     description: "Professional photo printing in multiple sizes",
-    price: "Starting at $2/photo",
+    price: "Starting at ₹2/photo",
   },
   {
     icon: File,
     title: "Document Processing",
     description: "Document formatting, conversion, and processing services",
-    price: "Starting at $5/document",
+    price: "Starting at ₹5/document",
   },
 ];
 

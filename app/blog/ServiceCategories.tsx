@@ -60,8 +60,8 @@ export function ServiceCategories() {
               transition={{ delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-lg p-6 bg-card hover:shadow-lg transition-shadow"
             >
-              <div className={`${category.color} p-3 rounded-full w-fit mb-4`}>
-                <category.icon className={`h-6 w-6 ${category.textColor}`} />
+              <div className={`₹{category.color} p-3 rounded-full w-fit mb-4`}>
+                <category.icon className={`h-6 w-6 ₹{category.textColor}`} />
               </div>
               <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
               <p className="text-muted-foreground mb-4">{category.description}</p>

@@ -10,28 +10,28 @@ const astrologyServices = [
     title: "Birth Chart Analysis",
     description: "Detailed analysis of your natal chart and life path",
     duration: "60 minutes",
-    price: "$100",
+    price: "₹100",
   },
   {
     icon: Sun,
     title: "Yearly Predictions",
     description: "Comprehensive forecast for the coming year",
     duration: "90 minutes",
-    price: "$150",
+    price: "₹150",
   },
   {
     icon: Stars,
     title: "Relationship Compatibility",
     description: "Synastry and composite chart analysis",
     duration: "75 minutes",
-    price: "$125",
+    price: "₹125",
   },
   {
     icon: Compass,
     title: "Career Guidance",
     description: "Astrological career counseling and timing",
     duration: "60 minutes",
-    price: "$100",
+    price: "₹100",
   },
 ];
 
