@@ -45,7 +45,7 @@ const experiences = [
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 last:mb-0 ${
+                className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 last:mb-0 ₹{
                   index % 2 === 0 ? "md:text-right" : "md:text-left"
                 }`}
               >

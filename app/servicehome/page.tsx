@@ -14,7 +14,7 @@ const packages = [
   {
     name: "Stardust",
     description: "Perfect for intimate events and personal shoots",
-    price: "$999",
+    price: "₹999",
     features: [
       "4 hours of coverage",
       "100 edited digital photos",
@@ -25,7 +25,7 @@ const packages = [
   {
     name: "Supernova",
     description: "Ideal for medium-sized events and comprehensive coverage",
-    price: "$2,499",
+    price: "₹2,499",
     features: [
       "8 hours of coverage",
       "300 edited digital photos",
@@ -37,7 +37,7 @@ const packages = [
   {
     name: "Celestial",
     description: "The ultimate package for your most important moments",
-    price: "$4,999",
+    price: "₹4,999",
     features: [
       "Full day coverage (up to 12 hours)",
       "500+ edited digital photos",

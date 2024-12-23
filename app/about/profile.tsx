@@ -23,7 +23,7 @@ export function ProfileHero() {
       const offset = 15;
       
       if (containerRef.current) {
-        (containerRef.current as HTMLElement).style.backgroundPosition = `calc(50% + ${moveX / offset}px) calc(50% + ${moveY / offset}px)`;
+        (containerRef.current as HTMLElement).style.backgroundPosition = `calc(50% + ₹{moveX / offset}px) calc(50% + ₹{moveY / offset}px)`;
       }
     };
 
