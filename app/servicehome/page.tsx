@@ -10,7 +10,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import DroneSection from './drone-section'
 import ServiceCard from './service-card'
 import Navbar from '../components/Navbar'
-import Footer from '../components/footer'
 const packages = [
   {
     name: "Stardust",
@@ -90,7 +89,7 @@ function AnimatedSection({ children }: { children: React.ReactNode }) {
   )
 }
 
-export default function ServicesPage() {
+export default function ServicesHome() {
   const [selectedPackage, setSelectedPackage] = useState(packages[1].name)
 
   return (
@@ -161,7 +160,6 @@ export default function ServicesPage() {
     
     </div>
     </div>
-    <Footer />
     </div>
   )
 }

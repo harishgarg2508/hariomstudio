@@ -11,6 +11,7 @@ const categories = [
     description: "Exam form filling, document processing, and educational support",
     color: "bg-blue-500/10",
     textColor: "text-blue-500",
+    id: "student-services",
   },
   {
     icon: Camera,
@@ -18,6 +19,7 @@ const categories = [
     description: "Professional photography, passport photos, and custom frames",
     color: "bg-green-500/10",
     textColor: "text-green-500",
+    id: "photo-services",
   },
   {
     icon: Printer,
@@ -25,6 +27,7 @@ const categories = [
     description: "Printing, scanning, and internet services",
     color: "bg-purple-500/10",
     textColor: "text-purple-500",
+    id: "cyber-cafe",
   },
   {
     icon: Stars,
@@ -32,10 +35,15 @@ const categories = [
     description: "Personal consultations and astrological guidance",
     color: "bg-orange-500/10",
     textColor: "text-orange-500",
+    id: "astrology-services",
   },
 ];
 
 export function ServiceCategories() {
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -57,7 +65,11 @@ export function ServiceCategories() {
               </div>
               <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
               <p className="text-muted-foreground mb-4">{category.description}</p>
-              <Button variant="outline" className="w-full">
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={() => scrollToSection(category.id)}
+              >
                 Learn More
               </Button>
             </motion.div>

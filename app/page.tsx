@@ -1,8 +1,8 @@
 import HeroSection from "./Home/page";
 import Navbar from "./components/Navbar";
 import ImageSlider from "./gallery/Image-slider";
-import { Gallery } from "./gallery/page";
-import ServicesPage from "./services/page";
+// import { Gallery } from "./gallery/page";
+import ServicesHome from "./servicehome/page";
 import Footer from "./components/footer";
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
 
           {/* Services Section */}
           <div className="mt-20">
-            <ServicesPage />
+            <ServicesHome />
           </div>
           
         </div>

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Camera, Video, Award, Image as ImageIcon } from "lucide-react";
 import { Equipment } from "./equipment";
-import { ExperienceTimeline } from "./experience";
+// import { ExperienceTimeline } from "./experience";
 import { ProfileHero } from "./profile";
 import { Stats } from "./stats";
 import Navbar from "../components/Navbar";
@@ -15,7 +15,7 @@ export default function AboutPage() {
       <ProfileHero />
       <Stats />
       <Equipment />
-      <ExperienceTimeline />
+      {/* <ExperienceTimeline /> */}
       <Footer />
     </main>
   );

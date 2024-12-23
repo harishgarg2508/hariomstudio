@@ -12,6 +12,24 @@ const updates = [
     urgent: true,
   },
   {
+    title: "University Exam Forms Open",
+    deadline: "March 15, 2024",
+    description: "Final semester examination forms are now available. Last date to apply without late fee.",
+    urgent: true,
+  },
+  {
+    title: "University Exam Forms Open",
+    deadline: "March 15, 2024",
+    description: "Final semester examination forms are now available. Last date to apply without late fee.",
+    urgent: true,
+  },
+  {
+    title: "University Exam Forms Open",
+    deadline: "March 15, 2024",
+    description: "Final semester examination forms are now available. Last date to apply without late fee.",
+    urgent: true,
+  },
+  {
     title: "Scholarship Applications",
     deadline: "March 30, 2024",
     description: "State merit scholarship applications are now being accepted.",
