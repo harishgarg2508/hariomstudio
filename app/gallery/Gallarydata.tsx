@@ -4,73 +4,105 @@ export const galleryData: GalleryItem[] = [
   {
     id: 1,
     type: 'image',
-    url: 'images/image1.jpg',
-    title: 'Urban Photography',
-    description: 'Capturing the essence of city life through architectural photography',
-    category: 'Photography'
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM07098.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
   },
   {
     id: 2,
     type: 'image',
-    url: 'images/image2.jpg',
-    title: 'Abstract Art',
-    description: 'Exploring colors and shapes in modern abstract composition',
-    category: 'Art'
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM07555.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
   },
   {
     id: 3,
     type: 'image',
-    url: 'images/image3.jpg',
-    title: 'Nature Photography',
-    description: 'Breathtaking landscapes and natural wonders',
-    category: 'Photography'
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM07556.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
   },
   {
     id: 4,
     type: 'image',
-    url: 'images/image1.jpg',
-    title: 'Portrait Art',
-    description: 'Expressive portraits capturing human emotions',
-    category: 'Art'
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM07572.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
   },
   {
     id: 5,
     type: 'image',
-    url: 'images/image2.jpg',
-    title: 'Minimalist Design',
-    description: 'Clean and simple aesthetic in design',
-    category: 'Design'
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM07574.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
   },
   {
     id: 6,
     type: 'image',
-    url: 'images/image3.jpg',
-    title: 'Creative Composition',
-    description: 'Innovative approaches to visual storytelling',
-    category: 'Photography'
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM07578.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
   },
   {
     id: 7,
-    type: 'video',
-    url: 'https://www.youtube.com/watch?v=Dwyt4wrESDQ',
-    title: 'Animation Reel',
-    description: 'Showcase of my best animation work',
-    category: 'Animation'
+    type: 'image',
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM07581.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
   },
   {
     id: 8,
-    type: 'video',
-    url: 'https://www.youtube.com/watch?v=GM_CM44GKvI',
-    title: 'Animation Reel',
-    description: 'Showcase of my best animation work',
-    category: 'Animation'
+    type: 'image',
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM07588.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
   },
   {
     id: 9,
-    type: 'video',
-    url: 'https://www.youtube.com/watch?v=GM_CM44GKvI',
-    title: 'Animation Reel',
-    description: 'Showcase of my best animation work',
-    category: 'Animation'
+    type: 'image',
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM08017.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 10,
+    type: 'image',
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/images/HOM08165.JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'preWedding'
+  },
+  {
+    id: 11,
+    type: 'image',
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/wedding7/part-2%20(103).JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 12,
+    type: 'image',
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/wedding7/part-2%20(106).JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 13,
+    type: 'image',
+    url: 'https://github.com/harishgarg2508/imageshariom/blob/main/wedding7/part-2%20(111).JPG?raw=true',
+    title: '',
+    description: '',
+    category: 'Wedding'
   }
 ];
