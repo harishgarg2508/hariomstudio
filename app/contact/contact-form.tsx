@@ -18,13 +18,8 @@ export function ContactForm() {
 
     const form = e.target as HTMLFormElement;
 
-    const formData = {
-      access_key: "f0172232-54d9-42e9-9596-380135ce3d80", // Your API Key
-      name: form.name.value,
-      email: form.email.value,
-      subject: form.subject.value,
-      message: form.message.value,
-    };
+    const formData = new FormData(form);
+    formData.append("access_key", "f0172232-54d9-42e9-9596-380135ce3d80"); // Your API Key
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
