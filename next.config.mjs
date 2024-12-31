@@ -1,12 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   
-  experimental: {
-    serverActions: true,
-  },
-  env: {
-    BLOB_READ_WRITE_TOKEN: process.env.BLOB_READ_WRITE_TOKEN,
-  },
+ 
   /* config options here */
   output: 'export',
   eslint: {
