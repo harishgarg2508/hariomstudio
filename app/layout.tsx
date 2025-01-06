@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',  // Add your verification code
+    google: 'tup0BNSz_JucffH8o1Utss6xgo9oxaZ5Ns6Uf092yK8',  // Add your verification code
   },
 };
 
@@ -44,6 +44,17 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Google Tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S2R4K96T3"></script>
+        <script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0S2R4K96T3');
+          `}
+        </script>
       </head>
       <body className={`${inter.className} dark`}>
         <ThemeProvider
