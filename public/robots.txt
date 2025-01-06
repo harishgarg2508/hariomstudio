@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.hariomstudiobilaspur.in
+
+# Sitemaps
+Sitemap: https://www.hariomstudiobilaspur.in/sitemap.xml
