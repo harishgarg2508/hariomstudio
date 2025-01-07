@@ -30,7 +30,7 @@ export default function Gallery() {
             transition={{ duration: 0.6 }}
             className="mb-12 text-center"
           >
-            <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+            <h1 className="mb-4 mt-8 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
               My Creative Portfolio
             </h1>
             <p className="mx-auto max-w-2xl text-gray-300">

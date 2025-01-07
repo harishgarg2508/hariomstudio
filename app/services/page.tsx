@@ -100,7 +100,7 @@ export default function ServicesPage() {
     <div className="container mx-auto px-4 py-16">
       <AnimatedSection>
         <header className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4">Capture Your Universe</h1>
+          <h1 className="text-5xl font-bold mb-4 mt-8">Capture Your Universe</h1>
           <p className="text-xl text-muted-foreground">
             Elevate your moments with our stellar photography services
           </p>
