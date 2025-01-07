@@ -1,4 +1,5 @@
 // import { HeroSection } from "@/components/ui/hero-section";
+'use client';
 import HeroSection from "./Home/Page";
 import Navbar from "./components/Navbar";
 import ImageSlider from "./gallery/Image-slider";
