@@ -1,4 +1,4 @@
-import HeroSection from "./Home/page";
+import HeroSection from "./Home/Page";
 import Navbar from "./components/Navbar";
 import ImageSlider from "./gallery/Image-slider";
 // import { Gallery } from "./gallery/page";
