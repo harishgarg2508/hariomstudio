@@ -44,7 +44,7 @@ const packages = [
   {
     name: "Basic",
     description: "Perfect for intimate events and personal shoots",
-    price: "₹30000",
+    price: "₹*****",
     features: [
       "4 hours of coverage",
       "100 edited digital photos",
@@ -55,7 +55,7 @@ const packages = [
   {
     name: "Medium",
     description: "Ideal for medium-sized events and comprehensive coverage",
-    price: "₹70000",
+    price: "₹******",
     features: [
       "8 hours of coverage",
       "300 edited digital photos",
@@ -67,7 +67,7 @@ const packages = [
   {
     name: "Advanced",
     description: "The ultimate package for your most important moments",
-    price: "₹100000+",
+    price: "₹*****",
     features: [
       "Full day coverage (up to 12 hours)",
       "500+ edited digital photos",

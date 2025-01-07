@@ -16,7 +16,7 @@ const packages = [
   {
     name: "Basic",
     description: "Perfect for intimate events and personal shoots in Bilaspur",
-    price: "₹30000",
+    price: "₹*****",
     features: [
       "4 hours of professional photography coverage",
       "100 professionally edited digital photos",
@@ -27,7 +27,7 @@ const packages = [
   {
     name: "Medium",
     description: "Ideal for weddings and events in Bilaspur with comprehensive coverage",
-    price: "₹70000",
+    price: "₹*****",
     features: [
       "8 hours of premium wedding photography",
       "300 expertly edited digital photos",
@@ -39,7 +39,7 @@ const packages = [
   {
     name: "Advanced",
     description: "Ultimate luxury wedding photography package in Bilaspur",
-    price: "₹100000+",
+    price: "₹*****",
     features: [
       "Full day wedding photography coverage (up to 12 hours)",
       "500+ professionally edited wedding photos",
