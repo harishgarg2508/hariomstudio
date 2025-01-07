@@ -28,7 +28,7 @@ const heroSchema = {
   }
 };
 
-export default function HeroSection() {
+export default function HomePage() {
   return (
     <>
       <Head>
