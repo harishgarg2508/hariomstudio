@@ -1,6 +1,6 @@
 // import { HeroSection } from "@/components/ui/hero-section";
 'use client';
-import HeroSection from "./Home/Page";
+import HeroSection from "./Home/home";
 import Navbar from "./components/Navbar";
 import ImageSlider from "./gallery/Image-slider";
 // import Gallery from "./gallery/page";
