@@ -184,7 +184,17 @@ export default function ServicesHome() {
                         </ul>
                       </CardContent>
                       <CardFooter>
-                        <Button size="lg" className="w-full">Book Now</Button>
+                      <button 
+              onClick={() => {
+                const phoneNumber = '919318869181';
+                const message = 'Hi HariOm Studio! I\'m interested in booking a photography session. Can you please provide me with more information about your services and packages?';
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+              }}
+              className="bg-primary text-primary-foreground px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity size-lg w-full"
+            >
+              Book Now
+            </button>
                       </CardFooter>
                     </Card>
                   </TabsContent>
