@@ -52,7 +52,7 @@ export default function ImageSlider() {
       >
         <Link href="/gallery">
           <motion.button
-            className="px-6 py-3 bg-white bg-opacity-20 backdrop-blur-md text-black rounded-full font-semibold text-lg shadow-lg hover:bg-opacity-30 transition-colors duration-300"
+            className="px-6 py-3 bg-red-900 bg-opacity-80 backdrop-blur-md text-black rounded-full font-semibold text-lg shadow-lg hover:bg-opacity-30 transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -43,7 +43,7 @@ export default function Layout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="images/logo.png" />
+        <link rel="icon" href="favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={`${inter.className} dark`}>
