@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Home, Camera, ImageIcon, Users, MessageCircle, Feather, BookOpen, Menu, X } from 'lucide-react'
 
@@ -84,14 +85,18 @@ export default function Navbar() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-3"
           >
             <Link href="/">
-              <div className="flex items-center space-x-2 cursor-pointer">
-                <Feather className="text-white/80 h-6 w-6" />
-                <span className="text-2xl font-bold text-white/90 tracking-wider">
-                  HariOm Studio
-                </span>
+              <div className="flex items-center space-x-3 cursor-pointer">
+                <Image 
+                  src="images/logo.png" 
+                  alt="HariOm Studio Logo" 
+                  width={120} 
+                  height={60} 
+                  className="rounded-full"
+                />
+               
               </div>
             </Link>
           </motion.div>
@@ -189,6 +194,3 @@ export default function Navbar() {
     </motion.header>
   )
 }
-
-
-
