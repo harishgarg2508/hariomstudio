@@ -33,8 +33,18 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
           </CardDescription>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <Button variant="outline">Learn More</Button>
-        </CardFooter>
+          <button 
+              onClick={() => {
+                const phoneNumber = '919318869181';
+                const message = 'Hi HariOm Studio! I\'m interested in booking a photography session. Can you please provide me with more information about your services and packages?';
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+              }}
+              className="bg-primary text-primary-foreground px-8 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+            >
+              Learn more
+            </button>
+         </CardFooter>
       </Card>
     </motion.div>
   )
