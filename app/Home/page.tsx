@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { Camera } from 'lucide-react';
 import Head from 'next/head';
-import Script from 'next/script';
 
 const heroSchema = {
   "@context": "https://schema.org",
@@ -30,7 +29,7 @@ const heroSchema = {
   }
 };
 
-export default function HomePage() {
+export default function HeroSection() {
   return (
     <>
       <Head>
@@ -43,11 +42,11 @@ export default function HomePage() {
         <meta property="og:url" content="https://hariomstudiobilaspur.in" />
         
         <link rel="canonical" href="https://hariomstudiobilaspur.in" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify(heroSchema)}
+        </script>
       </Head>
-
-      <Script id="schema-script" type="application/ld+json">
-        {JSON.stringify(heroSchema)}
-      </Script>
 
       <div className="flex flex-col items-start space-y-4" itemScope itemType="https://schema.org/PhotographyBusiness">
         <motion.div
@@ -80,25 +79,24 @@ export default function HomePage() {
         </motion.p>
 
         <motion.div
-          className="mt-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <button 
-            onClick={() => {
-              const phoneNumber = '919318869181';
-              const message = 'Hi HariOm Studio! I\'m interested in booking a photography session. Can you please provide me with more information about your services and packages?';
-              const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-              window.open(whatsappUrl, '_blank');
-            }}
-            className="bg-primary text-primary-foreground px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
+            className="mt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Book a Session
-          </button>
-        </motion.div>
+            <button 
+              onClick={() => {
+                const phoneNumber = '919318869181';
+                const message = 'Hi HariOm Studio! I\'m interested in booking a photography session. Can you please provide me with more information about your services and packages?';
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+              }}
+              className="bg-primary text-primary-foreground px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
+            >
+              Book a Session
+            </button>
+          </motion.div>
       </div>
     </>
   );
 }
-

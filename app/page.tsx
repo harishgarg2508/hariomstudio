@@ -1,5 +1,5 @@
 // import { HeroSection } from "@/components/ui/hero-section";
-import HomePage from "./Home/Page";
+import HeroSection from "./Home/Page";
 import Navbar from "./components/Navbar";
 import ImageSlider from "./gallery/Image-slider";
 // import Gallery from "./gallery/page";
@@ -15,7 +15,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             {/* Left side - Hero content */}
             <div className="order-2 lg:order-1">
-              <HomePage />
+              <HeroSection />
             </div>
             
             {/* Right side - Image slider */}
