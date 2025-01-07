@@ -10,54 +10,88 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import DroneSection from './drone-section'
 import ServiceCard from './service-card'
 import Navbar from '../components/Navbar'
+import Head from 'next/head'
+
 const packages = [
   {
-    name: "Stardust",
-    description: "Perfect for intimate events and personal shoots",
-    price: "₹999",
+    name: "Basic",
+    description: "Perfect for intimate events and personal shoots in Bilaspur",
+    price: "₹30000",
     features: [
-      "4 hours of coverage",
-      "100 edited digital photos",
-      "Online gallery",
-      "1 photographer"
+      "4 hours of professional photography coverage",
+      "100 professionally edited digital photos",
+      "Online gallery accessible anywhere",
+      "Expert photographer from Bilaspur"
     ]
   },
   {
-    name: "Supernova",
-    description: "Ideal for medium-sized events and comprehensive coverage",
-    price: "₹2,499",
+    name: "Medium",
+    description: "Ideal for weddings and events in Bilaspur with comprehensive coverage",
+    price: "₹70000",
     features: [
-      "8 hours of coverage",
-      "300 edited digital photos",
-      "Online gallery + USB drive",
-      "2 photographers",
-      "Engagement or pre-event shoot"
+      "8 hours of premium wedding photography",
+      "300 expertly edited digital photos",
+      "Online gallery + USB drive delivery",
+      "2 professional Bilaspur photographers",
+      "Complimentary pre-wedding shoot"
     ]
   },
   {
-    name: "Celestial",
-    description: "The ultimate package for your most important moments",
-    price: "₹4,999",
+    name: "Advanced",
+    description: "Ultimate luxury wedding photography package in Bilaspur",
+    price: "₹100000+",
     features: [
-      "Full day coverage (up to 12 hours)",
-      "500+ edited digital photos",
-      "Online gallery, USB drive, and printed album",
-      "2 photographers + 1 assistant",
-      "Engagement shoot and rehearsal dinner coverage",
-      "Drone footage included"
+      "Full day wedding photography coverage (up to 12 hours)",
+      "500+ professionally edited wedding photos",
+      "Premium online gallery, USB drive, and luxury wedding album",
+      "2 expert photographers + 1 assistant for complete coverage",
+      "Pre-wedding shoot and wedding ceremony coverage",
+      "Aerial drone wedding photography included"
     ]
   }
 ]
 
 const services = [
-  { name: "Wedding Photography", icon: <Heart className="h-8 w-8 mb-2 text-pink-500" /> },
-  { name: "Pre-Wedding Shoot", icon: <Camera className="h-8 w-8 mb-2 text-blue-500" /> },
-  { name: "Birthday Celebrations", icon: <Cake className="h-8 w-8 mb-2 text-yellow-500" /> },
-  { name: "Portfolio Shoot", icon: <Sparkles className="h-8 w-8 mb-2 text-purple-500" /> },
-  { name: "Corporate Events", icon: <Briefcase className="h-8 w-8 mb-2 text-gray-500" /> },
-  { name: "Concert & Music", icon: <Music className="h-8 w-8 mb-2 text-red-500" /> },
-  { name: "Family Portraits", icon: <Users className="h-8 w-8 mb-2 text-green-500" /> },
-  { name: "Travel & Adventure", icon: <Plane className="h-8 w-8 mb-2 text-cyan-500" /> },
+  { 
+    name: "Wedding Photography", 
+    icon: <Heart className="h-8 w-8 mb-2 text-pink-500" />,
+    description: "Best wedding photography services in Bilaspur, capturing your special moments"
+  },
+  { 
+    name: "Pre-Wedding Shoot", 
+    icon: <Camera className="h-8 w-8 mb-2 text-blue-500" />,
+    description: "Professional pre-wedding photography in scenic Bilaspur locations"
+  },
+  { 
+    name: "Birthday Celebrations", 
+    icon: <Cake className="h-8 w-8 mb-2 text-yellow-500" />,
+    description: "Expert birthday party photographer in Bilaspur"
+  },
+  { 
+    name: "Portfolio Shoot", 
+    icon: <Sparkles className="h-8 w-8 mb-2 text-purple-500" />,
+    description: "Professional portfolio photography in Bilaspur"
+  },
+  { 
+    name: "Corporate Events", 
+    icon: <Briefcase className="h-8 w-8 mb-2 text-gray-500" />,
+    description: "Top corporate event photography services in Bilaspur"
+  },
+  { 
+    name: "Concert & Music", 
+    icon: <Music className="h-8 w-8 mb-2 text-red-500" />,
+    description: "Expert concert and music event photography in Bilaspur"
+  },
+  { 
+    name: "Family Portraits", 
+    icon: <Users className="h-8 w-8 mb-2 text-green-500" />,
+    description: "Professional family portrait photography in Bilaspur"
+  },
+  { 
+    name: "Travel & Adventure", 
+    icon: <Plane className="h-8 w-8 mb-2 text-cyan-500" />,
+    description: "Adventure and travel photography services in Bilaspur"
+  },
 ]
 
 function AnimatedSection({ children }: { children: React.ReactNode }) {
@@ -93,74 +127,104 @@ export default function ServicesHome() {
   const [selectedPackage, setSelectedPackage] = useState(packages[1].name)
 
   return (
-    <div>
-    <div>
-      <Navbar />
-    <div className="container mx-auto px-4 py-16">
-      <AnimatedSection>
-        <header className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4">Capture Your Universe</h1>
-          <p className="text-xl text-muted-foreground">
-            Elevate your moments with our stellar photography services
-          </p>
-        </header>
-      </AnimatedSection>
+    <>
+      <Head>
+        <title>Best Wedding Photographer in Bilaspur, HP | Professional Photography Services</title>
+        <meta name="description" content="Looking for the best wedding photographer in Bilaspur? We offer premium wedding photography, pre-wedding shoots, and event photography services in Bilaspur, HP. Trusted by 1000+ couples." />
+        <meta name="keywords" content="best photographer in bilaspur, wedding photographer bilaspur, pre wedding shoot bilaspur, event photographer bilaspur, professional photographer bilaspur hp" />
+        <meta property="og:title" content="Best Wedding Photographer in Bilaspur, HP | Professional Photography Services" />
+        <meta property="og:description" content="Premium wedding photography services in Bilaspur. Book your wedding photographer today!" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.hariomstudiobilaspur.in/services" />
+      </Head>
+      
+      <div>
+        <Navbar />
+        <main className="container mx-auto px-4 py-16">
+          <AnimatedSection>
+            <header className="text-center mb-16">
+              <h1 className="text-5xl font-bold mb-4">Best Wedding Photography in Bilaspur</h1>
+              <p className="text-xl text-muted-foreground">
+                Trusted by 1000+ couples for capturing their perfect moments in Bilaspur, Himachal Pradesh
+              </p>
+              {/* <div className="mt-4 text-lg">
+                <address className="not-italic">
+                  Located at: Gandhi Market Rd, Upper Nihal, Bilaspur, HP 174001
+                  <br />
+                  Contact: <a href="tel:+919318869181" className="text-blue-600">+91 93188 69181</a>
+                </address>
+              </div> */}
+            </header>
+          </AnimatedSection>
 
-      <AnimatedSection>
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Cosmic Packages</h2>
-          <Tabs value={selectedPackage} onValueChange={setSelectedPackage} className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              {packages.map((pkg) => (
-                <TabsTrigger key={pkg.name} value={pkg.name} className="text-lg">
-                  {pkg.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            {packages.map((pkg) => (
-              <TabsContent key={pkg.name} value={pkg.name}>
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-3xl">{pkg.name}</CardTitle>
-                    <CardDescription className="text-xl">{pkg.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-4xl font-bold mb-4">{pkg.price}</p>
-                    <ul className="list-disc pl-5 space-y-2">
-                      {pkg.features.map((feature, index) => (
-                        <li key={index}>{feature}</li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter>
-                    <Button size="lg" className="w-full">Choose {pkg.name}</Button>
-                  </CardFooter>
-                </Card>
-              </TabsContent>
-            ))}
-          </Tabs>
-        </section>
-      </AnimatedSection>
+          <AnimatedSection>
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-center mb-8">Wedding Photography Packages in Bilaspur</h2>
+              <Tabs value={selectedPackage} onValueChange={setSelectedPackage} className="w-full">
+                <TabsList className="grid w-full grid-cols-3 mb-8">
+                  {packages.map((pkg) => (
+                    <TabsTrigger key={pkg.name} value={pkg.name} className="text-lg">
+                      {pkg.name}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+                {packages.map((pkg) => (
+                  <TabsContent key={pkg.name} value={pkg.name}>
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="text-3xl">{pkg.name}</CardTitle>
+                        <CardDescription className="text-xl">{pkg.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-4xl font-bold mb-4">{pkg.price}</p>
+                        <ul className="list-disc pl-5 space-y-2">
+                          {pkg.features.map((feature, index) => (
+                            <li key={index}>{feature}</li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <CardFooter>
+                        <Button size="lg" className="w-full">Book Now</Button>
+                      </CardFooter>
+                    </Card>
+                  </TabsContent>
+                ))}
+              </Tabs>
+            </section>
+          </AnimatedSection>
 
-      <AnimatedSection>
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Stellar Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard key={index} service={service} index={index} />
-            ))}
-          </div>
-        </section>
-      </AnimatedSection>
+          <AnimatedSection>
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-center mb-8">Professional Photography Services in Bilaspur</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {services.map((service, index) => (
+                  <ServiceCard key={index} service={service} index={index} />
+                ))}
+              </div>
+            </section>
+          </AnimatedSection>
 
-      <AnimatedSection>
-        <DroneSection />
-      </AnimatedSection>
+          <AnimatedSection>
+            <DroneSection />
+          </AnimatedSection>
 
-    
-    </div>
-    </div>
-    </div>
+          <AnimatedSection>
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-center mb-8">Why Choose Us for Wedding Photography in Bilaspur?</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold">Experience & Expertise</h3>
+                  <p>With over 25+ years of experience capturing weddings in Bilaspur, we understand the local traditions and perfect locations for your special day.</p>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold">Advanced Equipment</h3>
+                  <p>We use the latest professional cameras and lenses to ensure your wedding photos are crystal clear and stunning.</p>
+                </div>
+              </div>
+            </section>
+          </AnimatedSection>
+        </main>
+      </div>
+    </>
   )
 }
-

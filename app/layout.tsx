@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from './Home/theme';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,11 +31,11 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'tup0BNSz_JucffH8o1Utss6xgo9oxaZ5Ns6Uf092yK8',  // Add your verification code
+    google: 'tup0BNSz_JucffH8o1Utss6xgo9oxaZ5Ns6Uf092yK8',
   },
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: {
   children: React.ReactNode;
@@ -44,19 +45,26 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {/* Google Tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S2R4K96T3"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-0S2R4K96T3');
-          `}
-        </script>
       </head>
       <body className={`${inter.className} dark`}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0S2R4K96T3"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-0S2R4K96T3');
+            `,
+          }}
+        />
+        
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
