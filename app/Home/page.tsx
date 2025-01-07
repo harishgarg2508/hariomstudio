@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from 'framer-motion';
 import { Camera } from 'lucide-react';
 import Head from 'next/head';
