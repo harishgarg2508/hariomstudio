@@ -13,9 +13,9 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/footer'
 const packages = [
   {
-    name: "Stardust",
+    name: "Basic",
     description: "Perfect for intimate events and personal shoots",
-    price: "$999",
+    price: "₹30000",
     features: [
       "4 hours of coverage",
       "100 edited digital photos",
@@ -24,9 +24,9 @@ const packages = [
     ]
   },
   {
-    name: "Supernova",
+    name: "Medium",
     description: "Ideal for medium-sized events and comprehensive coverage",
-    price: "$2,499",
+    price: "₹70000",
     features: [
       "8 hours of coverage",
       "300 edited digital photos",
@@ -36,9 +36,9 @@ const packages = [
     ]
   },
   {
-    name: "Celestial",
+    name: "Advanced",
     description: "The ultimate package for your most important moments",
-    price: "$4,999",
+    price: "₹100000+",
     features: [
       "Full day coverage (up to 12 hours)",
       "500+ edited digital photos",
@@ -134,7 +134,18 @@ export default function ServicesPage() {
                     </ul>
                   </CardContent>
                   <CardFooter>
-                    <Button size="lg" className="w-full">Choose {pkg.name}</Button>
+                    {/* <Button size="lg" className="w-full">Choose {pkg.name}</Button> */}
+                    <button 
+              onClick={() => {
+                const phoneNumber = '919318869181';
+                const message = 'Hi HariOm Studio! I\'m interested in booking a photography session. Can you please provide me with more information about your services and packages?';
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+              }}
+              className="size-lg w-full bg-primary text-primary-foreground px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
+            >
+              Book {pkg.name}
+            </button>
                   </CardFooter>
                 </Card>
               </TabsContent>
