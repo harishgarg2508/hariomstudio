@@ -11,7 +11,7 @@ const navItems = [
   { href: '/gallery', label: 'Gallery', icon: ImageIcon },
   { href: '/services', label: 'Services', icon: Camera },
   { href: '/about', label: 'About', icon: Users },
-  { href: '/blog', label: 'Cyber Cafe', icon: BookOpen },
+  { href: '/blog', label: 'Blog', icon: BookOpen },
   { href: '/contact', label: 'Contact', icon: MessageCircle }
 ]
 

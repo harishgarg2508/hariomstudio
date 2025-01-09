@@ -4,7 +4,7 @@ import HeroSection from "./Home/home";
 import Navbar from "./components/Navbar";
 import ImageSlider from "./gallery/Image-slider";
 // import Gallery from "./gallery/page";
-import ServicesHome from "./servicehome/page";
+import ServicesHome from "./servicehome/servicehome";
 import Footer from "./components/footer";
 
 export default function Home() {
