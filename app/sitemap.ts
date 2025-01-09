@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from './blog/data/blogPosts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://your-domain.com';
+  const baseUrl = 'https://www.hariomstudiobilaspur.in';
 
   // Generate sitemap entries for blog posts
   const blogEntries = Object.entries(blogPosts).map(([slug, post]) => ({
