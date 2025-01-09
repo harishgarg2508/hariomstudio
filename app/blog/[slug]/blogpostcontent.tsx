@@ -3,6 +3,7 @@
 import Footer from "@/app/components/footer";
 import BackButton from "./BackButton";
 import ReactMarkdown from 'react-markdown';
+import Navbar from "@/app/components/Navbar";
 import BlogPost from "../data/blogPosts";
 
 type Props = {
@@ -12,7 +13,8 @@ type Props = {
 export default function BlogPostContent({ post }: Props) {
   return (
     <>
-      <article className="container mx-auto px-4 py-8 prose prose-lg dark:prose-invert max-w-4xl">
+      <Navbar />
+      <article className="container mt-32 mx-auto px-4 py-8 prose prose-lg dark:prose-invert max-w-4xl">
         <BackButton />
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         <div className="flex items-center gap-2 text-muted-foreground mb-8">
