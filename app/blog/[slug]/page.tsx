@@ -1,3 +1,5 @@
+"use client";
+
 import Footer from "@/app/components/footer";
 import type { Metadata } from "next";
 import BackButton from "./BackButton";
@@ -7,6 +9,13 @@ import ReactMarkdown from 'react-markdown';
 type Props = {
   params: { slug: string };
 };
+
+// Add generateStaticParams to tell Next.js which routes to pre-render
+export async function generateStaticParams() {
+  return Object.keys(blogPosts).map((slug) => ({
+    slug: slug,
+  }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = blogPosts[params.slug];

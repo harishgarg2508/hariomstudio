@@ -30,19 +30,19 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-background">
       <Navbar />
       <ServicesHero />
-      <ServiceCategories />
-      <section id="student-services">
+      {/* <ServiceCategories /> */}
+      {/* <section id="student-services">
         <StudentUpdates />
-      </section>
+      </section> */}
       <section id="photo-services">
         <PhotoServices />
       </section>
-      <section id="cyber-cafe">
+      {/* <section id="cyber-cafe">
         <PrintingServices />
-      </section>
-      <section id="astrology-services">
+      </section> */}
+      {/* <section id="astrology-services">
         <AstrologyServices />
-      </section>
+      </section> */}
       
       <section id="blog" className="py-16 px-4">
         <div className="container mx-auto">

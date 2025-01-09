@@ -216,7 +216,7 @@ interface BlogPost {
       
       Himachal Pradesh offers unparalleled opportunities for candid photography. Whether you're a professional photographer or enthusiast, the state's diverse landscape and rich culture provide endless possibilities for creating stunning images.`,
           date: "2025-01-07",
-          author: "Vikram Kumar",
+          author: "Harish Garg",
           keywords: [
             "candid photography Himachal",
             "best photographers Himachal Pradesh",

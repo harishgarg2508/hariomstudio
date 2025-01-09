@@ -8,7 +8,7 @@ export function ServicesHero() {
     <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6"
+          src="https://i.pinimg.com/736x/a8/c0/ca/a8c0cacca6974e601e8274ab10a24de7.jpg"
           alt="Services Background"
           fill
           className="object-cover brightness-50"
@@ -22,10 +22,9 @@ export function ServicesHero() {
           transition={{ duration: 0.8 }}
           className="text-center text-white"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">Our Services</h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">Blogs</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-            From academic solutions to professional photography and astrology consultations,
-            we offer a comprehensive range of services to meet your needs.
+            Typing...
           </p>
         </motion.div>
       </div>

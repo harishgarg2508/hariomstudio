@@ -17,7 +17,7 @@ const photoServices = [
     title: "Custom Frames",
     description: "Wide selection of frames in various sizes and styles",
     price: "Starting at ₹25",
-    image: "https://images.unsplash.com/photo-1544549999-f9b7d5f4d961",
+    image: "https://shorturl.at/1NOYW",
   },
   {
     icon: ImageIcon,

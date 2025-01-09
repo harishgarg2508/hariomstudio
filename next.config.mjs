@@ -17,6 +17,7 @@ const nextConfig = {
   },
   images: { 
     unoptimized: true,
+    trailingSlash: true,
     remotePatterns: [
       {
         protocol: 'https',
