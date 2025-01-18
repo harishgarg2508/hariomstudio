@@ -307,20 +307,7 @@
             content: `
         # The Complete Guide to Portrait and Headshot Photography
         
-<div style="text-align: center; margin: 20px 0;">
-  <a href="https://hariomstudiobilaspur.in" 
-     style="display: inline-block; 
-            padding: 15px 30px; 
-            background-color: #007bff; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 5px; 
-            font-size: 18px; 
-            font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-    Visit HariOm Studio Website
-  </a>
-</div>        
+      
         ## Why Professional Portraits Matter in Today's Digital World
         
         In an era where first impressions often happen online, professional portraits and headshots have become essential. At HariOm Studio, we specialize in creating compelling visual narratives through our portrait photography services.
