@@ -3017,4 +3017,92 @@ export const galleryData: GalleryItem[] = [
   //   description: '',
   //   category: 'Wedding'
   // }
+  {
+    id: 378,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=Y-HswcEDSik',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 379,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=GM_CM44GKvI',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 380,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=5cHpBZFA-K8',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 381,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=Dwyt4wrESDQ',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 382,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=pQlNfbgrAJo',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 383,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=WuS5l4mZa_Q',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 384,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=yJsFQzjcjLo',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 385,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=rxF9M9fDA8k',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 386,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=F2b-k5i-Z30',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 387,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=ocaX1CaNfDM',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
+  {
+    id: 388,
+    type: 'video',
+    url: 'https://www.youtube.com/watch?v=oVCE8cjlMCQ',
+    title: '',
+    description: '',
+    category: 'Wedding'
+  },
 ];
