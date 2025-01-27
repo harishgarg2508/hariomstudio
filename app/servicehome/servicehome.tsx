@@ -18,8 +18,8 @@ const packages = [
     description: "Perfect for intimate events and personal shoots in Bilaspur",
     price: "₹*****",
     features: [
-      "4 hours of professional photography coverage",
-      "100 professionally edited digital photos",
+      "* hours of professional photography coverage",
+      "100-300 professionally edited digital photos",
       "Online gallery accessible anywhere",
       "Expert photographer from Bilaspur"
     ]
@@ -29,8 +29,8 @@ const packages = [
     description: "Ideal for weddings and events in Bilaspur with comprehensive coverage",
     price: "₹*****",
     features: [
-      "8 hours of premium wedding photography",
-      "300 expertly edited digital photos",
+      "* hours of premium wedding photography",
+      "300-500 expertly edited digital photos",
       "Online gallery + USB drive delivery",
       "2 professional Bilaspur photographers",
       "Complimentary pre-wedding shoot"
@@ -41,7 +41,7 @@ const packages = [
     description: "Ultimate luxury wedding photography package in Bilaspur",
     price: "₹*****",
     features: [
-      "Full day wedding photography coverage (up to 12 hours)",
+      "Full wedding photography coverage ",
       "500+ professionally edited wedding photos",
       "Premium online gallery, USB drive, and luxury wedding album",
       "2 expert photographers + 1 assistant for complete coverage",
