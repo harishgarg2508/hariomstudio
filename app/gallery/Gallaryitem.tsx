@@ -26,6 +26,12 @@ export function GalleryItem({ item, items, index }: Props) {
     setImageError(true);
   };
 
+  // Handle right-click to prevent context menu
+  const handleRightClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    return false;
+  };
+
   const renderThumbnail = () => {
     if (item.type === 'video') {
       const videoId = item.url.split('v=')[1];
@@ -39,6 +45,7 @@ export function GalleryItem({ item, items, index }: Props) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-300 group-hover:scale-110"
             onError={handleImageError}
+            onContextMenu={handleRightClick}
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <Play className="h-12 w-12 text-white opacity-70" />
@@ -54,6 +61,7 @@ export function GalleryItem({ item, items, index }: Props) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-300 group-hover:scale-110"
           onError={handleImageError}
+          onContextMenu={handleRightClick}
         />
       );
     }
@@ -67,12 +75,14 @@ export function GalleryItem({ item, items, index }: Props) {
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="group relative overflow-hidden rounded-xl"
+        onContextMenu={handleRightClick}
       >
         <motion.div
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
           className="relative aspect-square w-full overflow-hidden cursor-pointer"
           onClick={() => setIsFullScreenOpen(true)}
+          onContextMenu={handleRightClick}
         >
           {imageError ? (
             <div className="flex items-center justify-center w-full h-full bg-gray-200 text-gray-500">
@@ -102,4 +112,3 @@ export function GalleryItem({ item, items, index }: Props) {
     </>
   );
 }
-

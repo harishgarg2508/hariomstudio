@@ -11,6 +11,10 @@ interface FullScreenSliderProps {
   initialIndex: number;
   onClose: () => void;
 }
+const handleRightClick = (e: React.MouseEvent) => {
+  e.preventDefault();
+  return false;
+};
 
 export function FullScreenSlider({ items, initialIndex, onClose }: FullScreenSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
@@ -73,6 +77,7 @@ export function FullScreenSlider({ items, initialIndex, onClose }: FullScreenSli
               className="object-contain"
               priority
               onError={handleImageError}
+              onContextMenu={handleRightClick}
             />
           )}
         </div>
