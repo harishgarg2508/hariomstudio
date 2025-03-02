@@ -17,6 +17,11 @@ const images = [
   "/images/image12.jpg",
 ];
 
+const handleRightClick = (e: React.MouseEvent) => {
+  e.preventDefault();
+  return false;
+};
+
 export default function ImageSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -46,6 +51,8 @@ export default function ImageSlider() {
             alt={`Slide ${index + 1}`}
             layout="fill"
             objectFit="cover"
+            onContextMenu={handleRightClick}
+
           />
         </motion.div>
       ))}
