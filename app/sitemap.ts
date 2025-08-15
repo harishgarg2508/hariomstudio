@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from './blog/data/blogPosts';
+export const dynamic = 'force-static'; 
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.hariomstudiobilaspur.in';

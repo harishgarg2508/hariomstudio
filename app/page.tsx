@@ -2,7 +2,7 @@
 'use client';
 import HeroSection from "./Home/home";
 import Navbar from "./components/Navbar";
-import ImageSlider from "./gallary/Image-slider";
+import ImageSlider from "./gallery/Image-slider";
 // import Gallery from "./gallery/page";
 import ServicesHome from "./servicehome/servicehome";
 import Footer from "./components/footer";

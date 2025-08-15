@@ -8,7 +8,8 @@ import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Upload, Search, ImageIcon, LogOut, Shield } from "lucide-react"
 import { SecurityPinDialog } from "@/components/security-pin-dialog"
-import { UploadDialog } from "@/components/upload-dialog"
+// import { UploadDialog } from "@/components/upload-dialog"
+
 import { AdvancedFilters } from "@/components/advanced-filters"
 import { GalleryGrid } from "@/components/gallery-grid"
 import { ImageViewer } from "@/components/image-viewer"
@@ -16,7 +17,14 @@ import { useAuth } from "@/lib/auth-context"
 import type { MediaItem, Tag, FilterOptions } from "@/lib/types"
 import { getMediaItems, getTags } from "@/lib/firebase-operations"
 import { YouTubeEmbed } from "@/components/youtube-embed"
+import dynamic from "next/dynamic"
 
+const UploadDialog = dynamic(() =>
+    import("@/components/upload-dialog").then((mod) => mod.UploadDialog),
+    {
+        ssr: false,
+    }
+)
 import { useRouter } from "next/navigation"
 
 export default function Gallery() {

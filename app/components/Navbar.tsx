@@ -8,7 +8,7 @@ import { Home, Camera, ImageIcon, Users, MessageCircle, Feather, BookOpen, Menu,
 
 const navItems = [
   { href: '/', label: 'Home', icon: Home },
-  { href: '/gallary', label: 'Gallery', icon: ImageIcon },
+  { href: '/gallery', label: 'Gallery', icon: ImageIcon },
   { href: '/services', label: 'Services', icon: Camera },
   { href: '/about', label: 'About', icon: Users },
   { href: '/blog', label: 'Blog', icon: BookOpen },
