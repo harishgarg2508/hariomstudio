@@ -2,29 +2,18 @@
 const nextConfig = {
   
  
-  /* config options here */
   output: 'export',
   eslint: {
-    ignoreDuringBuilds: true, // Disables ESLint checks during builds
+    ignoreDuringBuilds: true, 
   },
   typescript: {
-    ignoreBuildErrors: true, // Ignores TypeScript errors during builds
+    ignoreBuildErrors: true, 
   },
-  reactStrictMode: false, // Disables React strict mode to prevent warnings
+  reactStrictMode: false, 
   webpack: (config) => {
-    // Optional: Add custom webpack configuration if needed
     return config;
   },
-  images: { 
-    unoptimized: true,
-    trailingSlash: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
-  },
+  
 };
 
 export default nextConfig;
