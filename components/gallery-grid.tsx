@@ -46,11 +46,6 @@ export function GalleryGrid({ items, onImageClick, onVideoClick }: GalleryGridPr
                     MozUserSelect: "none",
                     msUserSelect: "none",
                     userSelect: "none",
-                    WebkitUserDrag: "none",
-                    KhtmlUserDrag: "none",
-                    MozUserDrag: "none",
-                    OUserDrag: "none",
-                    userDrag: "none",
                   }}
                 />
               ) : (
@@ -68,11 +63,6 @@ export function GalleryGrid({ items, onImageClick, onVideoClick }: GalleryGridPr
                         MozUserSelect: "none",
                         msUserSelect: "none",
                         userSelect: "none",
-                        WebkitUserDrag: "none",
-                        KhtmlUserDrag: "none",
-                        MozUserDrag: "none",
-                        OUserDrag: "none",
-                        userDrag: "none",
                       }}
                     />
                   ) : (

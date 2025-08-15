@@ -130,7 +130,7 @@ import { getMediaItems, getTags } from "@/lib/firebase-operations"
 
 import { useRouter } from "next/navigation"
 
-export default function GalleryPage() {
+export default function Gallery() {
   const router = useRouter()
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([])
   const [tags, setTags] = useState<Tag[]>([])

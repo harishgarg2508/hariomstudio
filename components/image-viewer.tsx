@@ -212,11 +212,11 @@ export function ImageViewer({ images, currentIndex, isOpen, onClose, onIndexChan
                     <button
                       key={image.id}
                       onClick={() => onIndexChange(actualIndex)}
-                      className={`flex-shrink-0 w-12 h-12 rounded overflow-hidden border-2 transition-all ${
-                        actualIndex === currentIndex
+                      className={"flex-shrink-0 w-12 h-12 rounded overflow-hidden border-2 transition-all " + 
+                        (actualIndex === currentIndex
                           ? "border-white scale-110"
-                          : "border-transparent hover:border-white/50"
-                      }`}
+                          : "border-transparent hover:border-white/50")
+                      }
                     >
                       <img
                         src={image.url || "/placeholder.svg"}

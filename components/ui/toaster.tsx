@@ -1,6 +1,8 @@
 "use client"
 
-import { useToast } from "@/hooks/use-toast"
+// Update the import path if your use-toast hook is located elsewhere, for example:
+import { useToast } from "../../hooks/use-toast"
+// Or create the file at src/hooks/use-toast.ts if it doesn't exist.
 import {
   Toast,
   ToastClose,
