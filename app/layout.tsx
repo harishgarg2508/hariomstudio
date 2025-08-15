@@ -1,26 +1,32 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from './Home/theme';
-import Script from 'next/script';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "./Home/theme";
+import Script from "next/script";
+import { SecurityWrapper } from "@/components/security-wrapper";
+import { AuthProvider } from "@/lib/auth-context";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Hariom Studio Bilaspur - Professional Photography in Himachal Pradesh',
-  description: 'Professional photography services in Bilaspur, Himachal Pradesh. Specializing in wedding, portrait, and event photography with 10+ years of experience.',
-  keywords: 'photography, Himachal Pradesh, Bilaspur, wedding photography, portrait photography, professional photographer',
-  metadataBase: new URL('https://www.hariomstudiobilaspur.in'),
+  title:
+    "Hariom Studio Bilaspur - Professional Photography in Himachal Pradesh",
+  description:
+    "Professional photography services in Bilaspur, Himachal Pradesh. Specializing in wedding, portrait, and event photography with 10+ years of experience.",
+  keywords:
+    "photography, Himachal Pradesh, Bilaspur, wedding photography, portrait photography, professional photographer",
+  metadataBase: new URL("https://www.hariomstudiobilaspur.in"),
   alternates: {
-    canonical: 'https://www.hariomstudiobilaspur.in'
+    canonical: "https://www.hariomstudiobilaspur.in",
   },
   openGraph: {
-    title: 'Hariom Studio Bilaspur - Professional Photography',
-    description: 'Professional photography services in Bilaspur, Himachal Pradesh',
-    url: 'https://www.hariomstudiobilaspur.in',
-    siteName: 'Hariom Studio',
-    locale: 'en_IN',
-    type: 'website',
+    title: "Hariom Studio Bilaspur - Professional Photography",
+    description:
+      "Professional photography services in Bilaspur, Himachal Pradesh",
+    url: "https://www.hariomstudiobilaspur.in",
+    siteName: "Hariom Studio",
+    locale: "en_IN",
+    type: "website",
   },
   robots: {
     index: true,
@@ -31,15 +37,11 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'tup0BNSz_JucffH8o1Utss6xgo9oxaZ5Ns6Uf092yK8',
+    google: "tup0BNSz_JucffH8o1Utss6xgo9oxaZ5Ns6Uf092yK8",
   },
 };
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -64,14 +66,16 @@ export default function Layout({
             `,
           }}
         />
-        
+
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >
-          {children}
+          <SecurityWrapper>
+            <AuthProvider>{children}</AuthProvider>
+          </SecurityWrapper>
         </ThemeProvider>
       </body>
     </html>
