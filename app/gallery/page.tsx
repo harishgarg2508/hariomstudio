@@ -142,6 +142,7 @@ export default function Gallery() {
   }
 
   const handleUploadComplete = () => {
+    setIsUploadDialogOpen(false)
     loadData()
   }
 
