@@ -90,7 +90,7 @@ export default function Navbar() {
             <Link href="/">
               <div className="flex items-center space-x-3 cursor-pointer">
                 <Image 
-                  src="images/logo.png" 
+                  src="/images/logo.png"
                   alt="HariOm Studio Logo" 
                   width={120} 
                   height={60} 
