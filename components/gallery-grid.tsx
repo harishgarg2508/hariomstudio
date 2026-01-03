@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ImageIcon, Video, Play, ExternalLink } from "lucide-react"
 import type { MediaItem } from "@/lib/types"
+import { getOptimizedUrl, getThumbnailUrl } from "@/lib/media-utils"
 
 interface GalleryGridProps {
   items: MediaItem[]
@@ -35,7 +36,7 @@ export function GalleryGrid({ items, onImageClick, onVideoClick }: GalleryGridPr
             >
               {item.type === "image" ? (
                 <img
-                  src={item.url || "/placeholder.svg?height=300&width=300&query=gallery image"}
+                  src={getOptimizedUrl(item.url, 400) || "/placeholder.svg?height=300&width=300&query=gallery image"}
                   alt={item.title || "Gallery image"}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   onContextMenu={(e) => e.preventDefault()}
@@ -52,7 +53,7 @@ export function GalleryGrid({ items, onImageClick, onVideoClick }: GalleryGridPr
                 <div className="relative w-full h-full bg-slate-900 flex items-center justify-center" data-no-select>
                   {item.thumbnailUrl ? (
                     <img
-                      src={item.thumbnailUrl || "/placeholder.svg"}
+                      src={getThumbnailUrl(item.thumbnailUrl) || "/placeholder.svg"}
                       alt={item.title || "Video thumbnail"}
                       className="w-full h-full object-cover"
                       onContextMenu={(e) => e.preventDefault()}

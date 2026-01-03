@@ -68,9 +68,12 @@ export function SecurityWrapper({ children }: SecurityWrapperProps) {
     // Disable text selection on images and sensitive areas
     const handleSelectStart = (e: Event) => {
       const target = e.target as HTMLElement
-      if (target?.tagName === "IMG" || target?.closest("[data-no-select]")) {
-        e.preventDefault()
-        return false
+      // Safely check if target is an element before using closest
+      if (target && target instanceof Element) {
+         if (target.tagName === "IMG" || target.closest("[data-no-select]")) {
+           e.preventDefault()
+           return false
+         }
       }
     }
 

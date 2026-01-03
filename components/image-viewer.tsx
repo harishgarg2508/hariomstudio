@@ -2,9 +2,10 @@
 import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { ChevronLeft, ChevronRight, X, Download, ExternalLink, Calendar, Tag } from "lucide-react"
 import type { MediaItem } from "@/lib/types"
+import { getOptimizedUrl } from "@/lib/media-utils"
 
 interface ImageViewerProps {
   images: MediaItem[]
@@ -105,7 +106,8 @@ export function ImageViewer({ images, currentIndex, isOpen, onClose, onIndexChan
           <div className="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/80 to-transparent p-4">
             <div className="flex items-center justify-between text-white">
               <div className="flex items-center gap-4">
-                <h2 className="text-lg font-medium truncate max-w-md">{currentImage.title || "Untitled"}</h2>
+                <DialogTitle className="text-lg font-medium truncate max-w-md text-white border-0 p-0">{currentImage.title || "Untitled"}</DialogTitle>
+                <DialogDescription className="sr-only">Image viewer dialog</DialogDescription>
                 <div className="text-sm text-gray-300">
                   {currentIndex + 1} of {images.length}
                 </div>
@@ -166,7 +168,7 @@ export function ImageViewer({ images, currentIndex, isOpen, onClose, onIndexChan
 
             {/* Main Image */}
             <img
-              src={currentImage.url || "/placeholder.svg"}
+              src={getOptimizedUrl(currentImage.url, 1600) || "/placeholder.svg"}
               alt={currentImage.title || "Gallery image"}
               className="max-w-full max-h-full object-contain"
               onLoad={handleImageLoad}
@@ -219,7 +221,7 @@ export function ImageViewer({ images, currentIndex, isOpen, onClose, onIndexChan
                       }
                     >
                       <img
-                        src={image.url || "/placeholder.svg"}
+                        src={getOptimizedUrl(image.url, 100) || "/placeholder.svg"}
                         alt={image.title || "Thumbnail"}
                         className="w-full h-full object-cover"
                         onContextMenu={(e) => e.preventDefault()}

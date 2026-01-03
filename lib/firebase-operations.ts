@@ -8,6 +8,8 @@ import {
   updateDoc,
   doc,
   serverTimestamp,
+  limit,
+  startAfter,
   type Timestamp,
 } from "firebase/firestore"
 import { db } from "./firebase"
@@ -28,7 +30,12 @@ export const addMediaItem = async (mediaData: Omit<MediaItem, "id" | "createdAt"
   }
 }
 
-export const getMediaItems = async (filters?: FilterOptions): Promise<MediaItem[]> => {
+export const getMediaItems = async (
+  filters?: FilterOptions,
+  lastDoc: any = null,
+  limitCount: number = 20
+): Promise<{ items: MediaItem[]; lastDoc: any }> => {
+
   try {
     let q = query(collection(db, "media"))
 
@@ -45,14 +52,26 @@ export const getMediaItems = async (filters?: FilterOptions): Promise<MediaItem[
     const sortField = filters?.sortBy === "title" ? "title" : "createdAt"
     const sortDirection = filters?.sortBy === "oldest" ? "asc" : "desc"
     q = query(q, orderBy(sortField, sortDirection))
+    
+    // Apply pagination
+    if (lastDoc) {
+      q = query(q, startAfter(lastDoc))
+    }
+    
+    q = query(q, limit(limitCount))
 
     const querySnapshot = await getDocs(q)
-    return querySnapshot.docs.map((doc) => ({
+    const items = querySnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
       createdAt: (doc.data().createdAt as Timestamp)?.toDate() || new Date(),
       updatedAt: (doc.data().updatedAt as Timestamp)?.toDate() || new Date(),
     })) as MediaItem[]
+    
+    return {
+      items,
+      lastDoc: querySnapshot.docs[querySnapshot.docs.length - 1] || null
+    }
   } catch (error) {
     console.error("Error getting media items:", error)
     throw error

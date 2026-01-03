@@ -1,6 +1,6 @@
 
 "use client"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { Badge } from "@/components/ui/badge"
 
 import { Button } from "@/components/ui/button"
@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Upload, Search, ImageIcon, LogOut, Shield } from "lucide-react"
 import { SecurityPinDialog } from "@/components/security-pin-dialog"
-// import { UploadDialog } from "@/components/upload-dialog"
+
 
 import { AdvancedFilters } from "@/components/advanced-filters"
 import { GalleryGrid } from "@/components/gallery-grid"
@@ -29,9 +29,17 @@ import { useRouter } from "next/navigation"
 
 export default function Gallery() {
   const router = useRouter()
-  const [mediaItems, setMediaItems] = useState<MediaItem[]>([])
+  // Pagination state
+  const [mediaItems, setMediaItems] = useState<MediaItem[]>([]) // Accumulated items
+  const [lastDoc, setLastDoc] = useState<any>(null)
+  const [hasMore, setHasMore] = useState(true)
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
+  const LIMIT = 20
+
+
+  // ... (keeping other states)
+
   const [tags, setTags] = useState<Tag[]>([])
-  const [filteredItems, setFilteredItems] = useState<MediaItem[]>([])
   const [filters, setFilters] = useState<FilterOptions>({
     tags: [],
     mediaType: "all",
@@ -45,83 +53,72 @@ export default function Gallery() {
 
   const [isImageViewerOpen, setIsImageViewerOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [imageItems, setImageItems] = useState<MediaItem[]>([])
+  
+  // Create a filtered view for client-side operations that Firestore can't handle perfectly (like search text)
+  // Note: ideally search should be server-side too, but Firestore requires 3rd party for full text.
+  // For now, we filter the *fetched* items.
+  const filteredItems = useMemo(() => {
+    return mediaItems.filter(item => {
+      if (!searchTerm) return true;
+      return item.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+             item.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    }).filter(item => {
+       if (!filters.dateRange) return true;
+       const itemDate = item.createdAt.getTime()
+       const startTime = filters.dateRange!.start.getTime()
+       const endTime = filters.dateRange!.end.getTime() + 24 * 60 * 60 * 1000
+       return itemDate >= startTime && itemDate <= endTime
+    });
+  }, [mediaItems, searchTerm, filters.dateRange]);
+
+  const imageItems = useMemo(() => filteredItems.filter((item) => item.type === "image"), [filteredItems]);
 
   const { isAuthenticated, logout } = useAuth()
 
-  // Load initial data
+  // DEBUG LOG
+
+
+  // Initial tags load
   useEffect(() => {
-    loadData()
+    getTags().then(setTags).catch(console.error)
   }, [])
 
-  // Apply filters when they change
+  // Load initial data
   useEffect(() => {
-    applyFilters()
-  }, [mediaItems, filters, searchTerm])
+    loadData(true)
+  }, [filters])
 
-  useEffect(() => {
-    const images = filteredItems.filter((item) => item.type === "image")
-    setImageItems(images)
-  }, [filteredItems])
 
-  const loadData = async () => {
+  const loadData = async (reset = false) => {
     try {
-      setLoading(true)
-      const [mediaData, tagsData] = await Promise.all([getMediaItems(), getTags()])
-      setMediaItems(mediaData)
-      setTags(tagsData)
+      if (reset) {
+        setLoading(true)
+        setMediaItems([])
+        setLastDoc(null)
+        setHasMore(true)
+      } else {
+        setIsLoadingMore(true)
+      }
+      
+      const currentLastDoc = reset ? null : lastDoc
+      const { items, lastDoc: newLastDoc } = await getMediaItems(filters, currentLastDoc, LIMIT)
+      
+      setMediaItems(prev => reset ? items : [...prev, ...items])
+      setLastDoc(newLastDoc)
+      setHasMore(items.length === LIMIT)
+      
     } catch (error) {
       console.error("Error loading data:", error)
     } finally {
       setLoading(false)
+      setIsLoadingMore(false)
     }
   }
 
-  const applyFilters = () => {
-    let filtered = [...mediaItems]
-
-    // Apply search
-    if (searchTerm) {
-      filtered = filtered.filter(
-        (item) =>
-          item.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase())),
-      )
+  const handleLoadMore = () => {
+    if (!isLoadingMore && hasMore) {
+      loadData(false)
     }
-
-    // Apply media type filter
-    if (filters.mediaType !== "all") {
-      filtered = filtered.filter((item) => item.type === filters.mediaType)
-    }
-
-    // Apply tag filters
-    if (filters.tags.length > 0) {
-      filtered = filtered.filter((item) => filters.tags.some((tag) => item.tags.includes(tag)))
-    }
-
-    // Apply date range filter
-    if (filters.dateRange) {
-      filtered = filtered.filter((item) => {
-        const itemDate = item.createdAt.getTime()
-        const startTime = filters.dateRange!.start.getTime()
-        const endTime = filters.dateRange!.end.getTime() + 24 * 60 * 60 * 1000 // Include end date
-        return itemDate >= startTime && itemDate <= endTime
-      })
-    }
-
-    // Apply sorting
-    filtered.sort((a, b) => {
-      switch (filters.sortBy) {
-        case "oldest":
-          return a.createdAt.getTime() - b.createdAt.getTime()
-        case "title":
-          return (a.title || "").localeCompare(b.title || "")
-        default: // latest
-          return b.createdAt.getTime() - a.createdAt.getTime()
-      }
-    })
-
-    setFilteredItems(filtered)
   }
 
   const handleUploadClick = () => {
@@ -143,7 +140,7 @@ export default function Gallery() {
 
   const handleUploadComplete = () => {
     setIsUploadDialogOpen(false)
-    loadData()
+    loadData(true) // Reload from scratch
   }
 
   const handleImageClick = (item: MediaItem) => {
@@ -241,7 +238,41 @@ return (
             </p>
           </div>
         ) : (
-          <GalleryGrid items={filteredItems} onImageClick={handleImageClick} onVideoClick={handleVideoClick} />
+          <div className="flex flex-col items-center space-y-8">
+            <div className="w-full">
+              <GalleryGrid items={filteredItems} onImageClick={handleImageClick} onVideoClick={handleVideoClick} />
+            </div>
+            
+            {hasMore && !searchTerm && !filters.dateRange && (
+               <Button 
+                onClick={handleLoadMore} 
+                className="min-w-[200px]"
+                variant="outline"
+                size="lg"
+                disabled={isLoadingMore}
+              >
+                {isLoadingMore ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current mr-2"></div>
+                    Loading more...
+                  </>
+                ) : (
+                  "Load More"
+                )}
+              </Button>
+            )}
+            
+            {/* Infinite Scroll Ready: To switch to infinite scroll, replace the Button above with:
+                <InfiniteScroll
+                  dataLength={filteredItems.length}
+                  next={handleLoadMore}
+                  hasMore={hasMore}
+                  loader={<h4>Loading...</h4>}
+                >
+                  <GalleryGrid ... />
+                </InfiniteScroll>
+            */}
+          </div>
         )}
       </div>
 
