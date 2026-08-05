@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
           <h3 className="text-xl font-semibold mb-3">Connect With Bilaspur's Top Photographers</h3>
           <div className="flex space-x-6 mb-6">
             <a 
-              href="https://facebook.com/hariomstudio" 
+              href="https://www.instagram.com/hariomstudioblp" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-colors"
@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
               <Facebook size={28} />
             </a>
             <a 
-              href="https://instagram.com/hariomstudio" 
+              href="https://www.instagram.com/hariomstudioblp" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-pink-400 transition-colors"
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
               <Instagram size={28} />
             </a>
             <a 
-              href="https://twitter.com/hariomstudio" 
+              href="https://www.instagram.com/hariomstudioblp" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-blue-500 transition-colors"
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
               <Twitter size={28} />
             </a>
             <a 
-              href="https://youtube.com/hariomstudio" 
+              href="https://www.youtube.com/channel/UCD1eU1m2AwTK2H0_0MttNgQ" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-red-500 transition-colors"
