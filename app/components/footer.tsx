@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
           <h3 className="text-xl font-semibold mb-3">Connect With Bilaspur's Top Photographers</h3>
           <div className="flex space-x-6 mb-6">
             <a 
-              href="https://www.instagram.com/hariomstudioblp" 
+              href="https://www.facebook.com/share/1DF3GZyVKG" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition-colors"
